@@ -212,7 +212,7 @@ This function updates the top players based on the provided user's information.
 ```
 The showtopplayers() function is responsible for displaying the leaderboard of the top players in a game. It reads the player data from a file called "topplayers.txt" and then prints the player's name, score, and playing time.
 
-## Q&A
+## FAQ
 
 #### How to start gaming?
 
@@ -233,10 +233,10 @@ ifstream usernamesfile("C:\Users\A\Desktop\c++\...");
 ```
 
 ### Is there any diffrence between "IOS" and "Windows" or "Visual Stadio" and "VS Code" for running this code?
-Actually nothing especially,but the best version of run is on windows. we run this code on both. There are some little point that I mention if you find any problem try them.
+Actually nothing especially,but the best version of run is on windows. However we run this code on both. There are some little point that I mention if you find any problem try them.
 - 1: change the name of file with full address.
-- 2: comment second space_to_underline function and uncomment the other one exist above that.
-- 3: comment first get_localtime function and uncomment second one
+- 2: comment second space_to_underline function and uncomment the other one which exist above that.
+- 3: comment first get_localtime function and uncomment second one.
 - 4: if your problem didnt solved, send me a message by using the link of my telegram acount in link box. =)
   
 
