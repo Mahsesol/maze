@@ -32,8 +32,53 @@ If you are curious about details of the action behind each number and function, 
 
 ## 🛠 Functions
 ```cpp
-  
+
 ```
+
+```cpp
+
+```
+
+```cpp
+
+```
+
+```cpp
+
+```
+
+```cpp
+
+```
+```cpp
+
+```
+
+```cpp
+void printuserinfo(userinfo user);
+```
+In this code section, we have a function called printuserinfo that takes a userinfo object as a parameter. The purpose of this function is to print the information stored in the userinfo object.
+```cpp
+vector <history>  gethistory();
+```
+Here we have a function called gethistory() that retrieves historical data from a file and returns it as a vector of history objects. The history objects contain information about a player's name, the map they played on, the result of the game, the date of the game, and the playing time.
+```cpp
+void updatehistory(string playername, string mapname, int result, int playingtime, vector<history> historyvec);
+```
+It takes several parameters, including the player's name, map name, game result, playing time, and the game history vector then it start to the process of reading from or writing to files. In our code, we use file handling to store the updated game history in a text file named "history.txt".
+```cpp
+void showhistory(vector<history> vec);
+```
+This function calculate time and print history.
+
+```cpp
+void updatetopplayers(userinfo user);
+```
+This function updates the top players based on the provided user's information.
+```cpp
+  void showtopplayers();
+```
+The showtopplayers() function is responsible for displaying the leaderboard of the top players in a game. It reads the player data from a file called "topplayers.txt" and then prints the player's name, score, and playing time.
 
 ## Q&A
 
@@ -70,8 +115,11 @@ Actually nothing especially,but the best version of run is on windows. we run th
 https://t.me/lilia_rh  
 https://t.me/mahsa_solimani
 
-## Creators
 
+## Feedback
+
+If you have any feedback, please reach out to us. <3 
+## 
 - [Liliarouhi](https://www.github.com/octokatherine)
 - [Mahsesol](https://www.github.com/octokatherine)
 
