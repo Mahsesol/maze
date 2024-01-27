@@ -20,6 +20,8 @@ maps name, result,... of ten last game in history part.
 And last choice, number "7" is using to exsiting from code.  
 If you are curious about details of the action behind each number and function, after checking codes, check "functions" part here.  
 
+
+
 ## Features
 
 - You are able to see the history of game.
@@ -29,6 +31,8 @@ If you are curious about details of the action behind each number and function, 
 - You are able to see each plays time spent and campare with your previos record.
 - You can personalize your table of number(playground).
 - you are able to chose a map or user name more than one word.
+
+
 
 ## 🛠 Functions
 ```cpp
@@ -50,10 +54,40 @@ If you are curious about details of the action behind each number and function, 
 ```cpp
 
 ```
+
 ```cpp
-
+vector<vector<int>> filetovec(string mapname);
 ```
+The function filetovec takes a string parameter mapname, which represents the name of the file to be read.
+The code checks if the file extension is ".txt" by extracting the last four characters of the mapname string using the substr function. If the extension is not ".txt", it appends ".txt" to the mapname string.
+The code opens the file using the ifstream class and assigns it to the file object.
+The dimensions of the map (number of rows and columns) are read from the file using the >> operator and stored in the row and col variables. The steps variable is also read but its purpose is not clear from the provided code snippet.
+A 2D array arr is dynamically allocated to store the map data. The size of the array is determined by the values of row1 and col1.
+The map data is read from the file into the arr array using nested loops.
+The arr array is then converted into a vector vec. Each element of the arr array is converted to an integer using the stoi function and pushed into the corresponding row of the vec vector.
+After converting the array into a vector, the dynamically allocated memory for the arr array is cleaned up to avoid memory leaks.
+Finally, the vec vector is returned from the function.  
 
+```cpp
+int getstepsfromfile(string mapname);
+```
+We first check if the given mapname has a ".txt" extension. We do this by extracting the last four characters of the string using the substr function and comparing it with ".txt". If the extension is missing, we append ".txt" to the mapname string.
+Next, we create an ifstream object named file and open the file with the given mapname. This allows us to read data from the file.
+We then declare three string variables: row, col, and steps. These variables will store the values read from the file.
+Using the >> operator, we read the values from the file into the respective variables. The >> operator is used to extract data from the file stream.
+Finally, we convert the steps string to an integer using the stoi function and return the result.
+```cpp
+string get_localtime();
+```
+This is a function from the <ctime> library that converts the time_t object to a local time representation.
+```cpp
+userinfo getuserinfo(string name);
+```
+A function that retrieves user information from a file. It takes a username as input and returns a userinfo struct containing the user's information. If the user exists in the file, their information is read from the file. If the user does not exist, a new entry is created for them in the file with default values.
+```cpp
+void updateuserinfo(userinfo user, int gameresult, int playingtime);
+```
+We have a function called updateuserinfo that is responsible for updating user information in a CPP program. The function takes in three parameters: userinfo user, int gameresult, and int playingtime. The userinfo structure holds information about the user, such as their name, play count, win count, last win time, total playing time, and total playing time for wins.
 ```cpp
 void printuserinfo(userinfo user);
 ```
