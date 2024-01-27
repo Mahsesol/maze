@@ -80,7 +80,7 @@ Blockmaker function, which takes a 2D vector matrix and an integer n as paramete
 ```cpp
 vector<vector<int>> easymazemaker();
 ```
- we will create a maze with random paths using C++. The maze will be represented as a 2D vector, where each element represents a cell in the maze. The goal is to navigate from the top-left cell to the bottom-right cell, accumulating the values of the cells along the path.
+ We will create a maze with random paths. The maze will be represented as a 2D vector, where each element represents a cell in the maze. The goal is to navigate from the top-left cell to the bottom-right cell, accumulating the values of the cells along the path.
  
 
 ```cpp
@@ -122,8 +122,8 @@ There is a function named play that takes a maze, minimum and maximum values, an
 The play function follows the following structure:  
 Initialization: The function initializes variables and displays instructions for playing the game.  
 Game Loop: The function enters a loop that continues until one of the following conditions is met:  
-The player runs out of steps.
-The player reaches the exit.
+The player runs out of steps.  
+The player reaches the exit.  
 The player is unable to make a valid move.  
 User Input: Inside the game loop, the player is prompted to enter a move. The available moves are 'w' (up), 's' (down), 'a' (left), and 'd' (right).  
 Move Validation: The function checks if the move is valid based on the current position of the player and the maze structure. If the move is valid, the player's position is updated, points are collected, and the maze is updated accordingly. If the move is invalid, an appropriate message is displayed.  
@@ -143,29 +143,29 @@ Its a simple function called exists_test that takes a std::string parameter repr
 ```cpp
 vector<vector<int>> userfiletovec(string& mapname);
 ```
-The userfiletovec function is a useful utility for reading the contents of a file into a 2D vector . It handles file existence checks, user input validation, and dynamic memory allocation. By understanding the code structure and key concepts, you can effectively use this function in your own programs to process file data.
+The userfiletovec function is a useful utility for reading the contents of a file into a 2D vector . It handles file existence checks, user input validation, and dynamic memory allocation.
 
 ```cpp
 vector<vector<int>> filetovec(string mapname);
 ```
-The function filetovec takes a string parameter mapname, which represents the name of the file to be read.
-The code checks if the file extension is ".txt" by extracting the last four characters of the mapname string using the substr function. If the extension is not ".txt", it appends ".txt" to the mapname string.
-The code opens the file using the ifstream class and assigns it to the file object.
-The dimensions of the map (number of rows and columns) are read from the file using the >> operator and stored in the row and col variables. The steps variable is also read but its purpose is not clear from the provided code snippet.
-A 2D array arr is dynamically allocated to store the map data. The size of the array is determined by the values of row1 and col1.
-The map data is read from the file into the arr array using nested loops.
-The arr array is then converted into a vector vec. Each element of the arr array is converted to an integer using the stoi function and pushed into the corresponding row of the vec vector.
+The function filetovec takes a string parameter mapname, which represents the name of the file to be read.  
+The code checks if the file extension is ".txt" by extracting the last four characters of the mapname string using the substr function. If the extension is not ".txt", it appends ".txt" to the mapname string.  
+The code opens the file using the ifstream class and assigns it to the file object.  
+The dimensions of the map (number of rows and columns) are read from the file using the >> operator and stored in the row and col variables. The steps variable is also read but its purpose is not clear from the provided code snippet.  
+A 2D array arr is dynamically allocated to store the map data. The size of the array is determined by the values of row1 and col1.  
+The map data is read from the file into the arr array using nested loops.  
+The arr array is then converted into a vector vec. Each element of the arr array is converted to an integer using the stoi function and pushed into the corresponding row of the vec vector.  
 After converting the array into a vector, the dynamically allocated memory for the arr array is cleaned up to avoid memory leaks.
 Finally, the vec vector is returned from the function.  
 
 ```cpp
 int getstepsfromfile(string mapname);
 ```
-We first check if the given mapname has a ".txt" extension. We do this by extracting the last four characters of the string using the substr function and comparing it with ".txt". If the extension is missing, we append ".txt" to the mapname string.
-Next, we create an ifstream object named file and open the file with the given mapname. This allows us to read data from the file.
-We then declare three string variables: row, col, and steps. These variables will store the values read from the file.
-Using the >> operator, we read the values from the file into the respective variables. The >> operator is used to extract data from the file stream.
-Finally, we convert the steps string to an integer using the stoi function and return the result.
+We first check if the given mapname has a ".txt" extension. We do this by extracting the last four characters of the string using the substr function and comparing it with ".txt". If the extension is missing, we append ".txt" to the mapname string.  
+Next, we create an ifstream object named file and open the file with the given mapname. This allows us to read data from the file.  
+We then declare three string variables: row, col, and steps. These variables will store the values read from the file.  
+Using the >> operator, we read the values from the file into the respective variables.  
+Finally, we convert the steps string to an integer using the stoi function and return the result.  
 
 ```cpp
 string get_localtime();
