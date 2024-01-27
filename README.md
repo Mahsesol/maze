@@ -1,4 +1,5 @@
 # Maze
+[![AGPL License](https://img.shields.io/badge/IUST-Mathemati%20c:-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
 An enjoyable funny exercise for your mind.
 Here is a 2D maze of number project which is improving your creativity, problem solving skills, memory, hand-eye coordination and... .Beside all its a good hobby for your free times!
