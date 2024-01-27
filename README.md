@@ -35,9 +35,6 @@ If you are curious about details of the action behind each number and function, 
 
 
 ## 🛠 Functions
-```cpp
-
-```
 
 ```cpp
 
@@ -47,6 +44,67 @@ If you are curious about details of the action behind each number and function, 
 
 ```
 
+```cpp
+
+```
+
+```cpp
+
+```
+
+```cpp
+vector<vector<int>> easymazemaker();
+```
+ we will create a maze with random paths using C++. The maze will be represented as a 2D vector, where each element represents a cell in the maze. The goal is to navigate from the top-left cell to the bottom-right cell, accumulating the values of the cells along the path.
+
+```cpp
+vector<vector<int>> hardmazemaker();
+```
+The program will prompt the user to enter various parameters such as the size of the maze, the minimum and maximum values for the maze elements, the number of steps in the path, and the minimum and maximum number of blocks in the maze. The program will then generate a hard maze based on these parameters.
+
+```cpp
+bool mazesolution(vector<vector<int>>& maze, int x, int y, int destX, int destY, int steps, int min, int max, int sum, vector<vector<int>>& maze1) ;
+```
+The mazesolution function starts with some base cases to check for invalid conditions. If any of these conditions are met, the function returns false. These base cases include:  
+Checking if the current coordinates are out of bounds of the maze.  
+Checking if the current cell value is less than the minimum allowed value and not the destination cell.  
+Checking if the current cell value is 0, indicating a blocked cell.  
+Checking if the number of steps is negative.  
+If none of the base cases are met, the function checks if the current coordinates are the destination coordinates and if the sum of the costs of the visited cells is equal to the current sum and the number of steps is 0. If this condition is met, the function stores the solution path in the maze1 vector and returns true.  
+If the base cases are not met and the destination is not reached, the function performs recursive backtracking. It adds the cost of the current cell to the sum, subtracts a change value from the current cell value, and recursively calls the mazesolution function for the adjacent cells (up, down, left, and right). If any of these recursive calls return true, indicating a valid path, the function returns true.  
+If no valid path is found, the function backtracks by adding the change value back to the current cell value and subtracting the cost of the current cell from the sum. It then returns false.  
+```cpp
+void printmaze(const vector<vector<int>>& array, int min, int max);
+```
+We have a function called printmaze that is responsible for printing a maze represented by a 2D vector. The maze is printed with different colors and formatting to highlight specific elements.
+
+```cpp
+bool isvalidmoveplay(vector<vector<int>>& maze, int x, int y, int minyy);
+```
+The function returns a boolean value indicating whether the move is valid or not.
+```cpp
+void printmazeplay(const vector<vector<int>>& array, int min, int max, int x, int y) ;
+```
+We have a function called printmazeplay that takes in a 2D vector array, along with some other parameters. The function's purpose is to print the maze represented by the array with colorful borders. The maze is printed in the console, and different colors are used to highlight specific elements of the maze.
+
+```cpp
+int play(vector<vector<int>> maze, int min, int max, int& steps);
+```
+There is a function named play that takes a maze, minimum and maximum values, and a reference to the number of steps as input. The function returns 1 if the player wins and 0 if the player loses.  
+The play function follows the following structure:  
+Initialization: The function initializes variables and displays instructions for playing the game.  
+Game Loop: The function enters a loop that continues until one of the following conditions is met:  
+The player runs out of steps.
+The player reaches the exit.
+The player is unable to make a valid move.  
+User Input: Inside the game loop, the player is prompted to enter a move. The available moves are 'w' (up), 's' (down), 'a' (left), and 'd' (right).  
+Move Validation: The function checks if the move is valid based on the current position of the player and the maze structure. If the move is valid, the player's position is updated, points are collected, and the maze is updated accordingly. If the move is invalid, an appropriate message is displayed.  
+Game Status: After each move, the function displays the updated maze, the number of steps left, and the total points collected.  
+Game Result: Once the game loop ends, the function checks the final game state. If the player has reached the exit with the correct number of points, a "Congratulations" message is displayed. Otherwise, a "You Lost" message is displayed.
+```cpp
+string choosmap();
+```
+The choosmap() function provides a convenient way for users to choose a map from a list of options stored in a text file.
 ```cpp
 inline bool exists_test(const std::string& name);
 ```
