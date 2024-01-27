@@ -37,25 +37,52 @@ If you are curious about details of the action behind each number and function, 
 ## 🛠 Functions
 
 ```cpp
-
+bool check_number(string str);
 ```
+The program contains a function named check_number that takes a string as input and returns a boolean value indicating whether the string represents a number.
 
 ```cpp
-
+string space_to_underline(string str) 
 ```
+It takes a string str as input and returns the modified string with spaces replaced by underscores.  
+Ths function allows you to have map and user names in two word.
 
 ```cpp
-
+int minelement(vector<vector<int>> matrix);
 ```
+The minelement function takes a matrix as input, represented by a vector of vectors of integers (vector<vector<int>>). It initializes the min variable with the maximum possible integer value using std::numeric_limits<int>::max(). then iterates through each row of the matrix using the for_each algorithm from the C++ Standard Library. For each row, it finds the minimum element using the min_element algorithm and compares it with the current minimum value stored in the min variable. If the found minimum element is smaller than the current minimum, it updates the min variable.  
+Finally, the function returns the minimum element found in the matrix.
 
 ```cpp
-
+int maxelement(vector<vector<int>> matrix);
 ```
+This Function is finding the maximum element in a matrix.
+
+```cpp
+void newmap(vector<vector<int>> vec, int row, int col, int steps, string mapname);
+```
+Its related to the process of creating a map and saving it to a file.
+
+```cpp
+bool isValid(int x, int y, int rows, int cols);
+```
+This function is used to check whether a given position (x, y) is valid within a grid of size rows by cols.
+
+```cpp
+bool way(vector<vector<int>>& maze, int x, int y, int destX, int destY, int steps);
+```
+We have a maze represented by a 2D vector of integers. The maze contains walls represented by 0s and open paths represented by 1s. The goal is to find a path from a starting position (x, y) to a destination position (destX, destY) within a given number of steps.
+
+```cpp
+void blockmaker(vector<vector<int>>& matrix, int n);
+```
+Blockmaker function, which takes a 2D vector matrix and an integer n as parameters. The matrix represents the matrix in which we want to create blocks, and n represents the number of blocks to create.
 
 ```cpp
 vector<vector<int>> easymazemaker();
 ```
  we will create a maze with random paths using C++. The maze will be represented as a 2D vector, where each element represents a cell in the maze. The goal is to navigate from the top-left cell to the bottom-right cell, accumulating the values of the cells along the path.
+ 
 
 ```cpp
 vector<vector<int>> hardmazemaker();
@@ -73,6 +100,7 @@ Checking if the number of steps is negative.
 If none of the base cases are met, the function checks if the current coordinates are the destination coordinates and if the sum of the costs of the visited cells is equal to the current sum and the number of steps is 0. If this condition is met, the function stores the solution path in the maze1 vector and returns true.  
 If the base cases are not met and the destination is not reached, the function performs recursive backtracking. It adds the cost of the current cell to the sum, subtracts a change value from the current cell value, and recursively calls the mazesolution function for the adjacent cells (up, down, left, and right). If any of these recursive calls return true, indicating a valid path, the function returns true.  
 If no valid path is found, the function backtracks by adding the change value back to the current cell value and subtracting the cost of the current cell from the sum. It then returns false.  
+
 ```cpp
 void printmaze(const vector<vector<int>>& array, int min, int max);
 ```
@@ -82,6 +110,7 @@ We have a function called printmaze that is responsible for printing a maze repr
 bool isvalidmoveplay(vector<vector<int>>& maze, int x, int y, int minyy);
 ```
 The function returns a boolean value indicating whether the move is valid or not.
+
 ```cpp
 void printmazeplay(const vector<vector<int>>& array, int min, int max, int x, int y) ;
 ```
@@ -101,14 +130,17 @@ User Input: Inside the game loop, the player is prompted to enter a move. The av
 Move Validation: The function checks if the move is valid based on the current position of the player and the maze structure. If the move is valid, the player's position is updated, points are collected, and the maze is updated accordingly. If the move is invalid, an appropriate message is displayed.  
 Game Status: After each move, the function displays the updated maze, the number of steps left, and the total points collected.  
 Game Result: Once the game loop ends, the function checks the final game state. If the player has reached the exit with the correct number of points, a "Congratulations" message is displayed. Otherwise, a "You Lost" message is displayed.
+
 ```cpp
 string choosmap();
 ```
 The choosmap() function provides a convenient way for users to choose a map from a list of options stored in a text file.
+
 ```cpp
 inline bool exists_test(const std::string& name);
 ```
 Its a simple function called exists_test that takes a std::string parameter representing the file name. The function returns a boolean value indicating whether the file exists or not.
+
 ```cpp
 vector<vector<int>> userfiletovec(string& mapname);
 ```
@@ -135,30 +167,37 @@ Next, we create an ifstream object named file and open the file with the given m
 We then declare three string variables: row, col, and steps. These variables will store the values read from the file.
 Using the >> operator, we read the values from the file into the respective variables. The >> operator is used to extract data from the file stream.
 Finally, we convert the steps string to an integer using the stoi function and return the result.
+
 ```cpp
 string get_localtime();
 ```
 This is a function from the <ctime> library that converts the time_t object to a local time representation.
+
 ```cpp
 userinfo getuserinfo(string name);
 ```
 A function that retrieves user information from a file. It takes a username as input and returns a userinfo struct containing the user's information. If the user exists in the file, their information is read from the file. If the user does not exist, a new entry is created for them in the file with default values.
+
 ```cpp
 void updateuserinfo(userinfo user, int gameresult, int playingtime);
 ```
 We have a function called updateuserinfo that is responsible for updating user information in a CPP program. The function takes in three parameters: userinfo user, int gameresult, and int playingtime. The userinfo structure holds information about the user, such as their name, play count, win count, last win time, total playing time, and total playing time for wins.
+
 ```cpp
 void printuserinfo(userinfo user);
 ```
 In this code section, we have a function called printuserinfo that takes a userinfo object as a parameter. The purpose of this function is to print the information stored in the userinfo object.
+
 ```cpp
 vector <history>  gethistory();
 ```
 Here we have a function called gethistory() that retrieves historical data from a file and returns it as a vector of history objects. The history objects contain information about a player's name, the map they played on, the result of the game, the date of the game, and the playing time.
+
 ```cpp
 void updatehistory(string playername, string mapname, int result, int playingtime, vector<history> historyvec);
 ```
 It takes several parameters, including the player's name, map name, game result, playing time, and the game history vector then it start to the process of reading from or writing to files. In our code, we use file handling to store the updated game history in a text file named "history.txt".
+
 ```cpp
 void showhistory(vector<history> vec);
 ```
@@ -168,6 +207,7 @@ This function calculate time and print history.
 void updatetopplayers(userinfo user);
 ```
 This function updates the top players based on the provided user's information.
+
 ```cpp
   void showtopplayers();
 ```
