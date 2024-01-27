@@ -48,12 +48,13 @@ If you are curious about details of the action behind each number and function, 
 ```
 
 ```cpp
-
+inline bool exists_test(const std::string& name);
 ```
-
+Its a simple function called exists_test that takes a std::string parameter representing the file name. The function returns a boolean value indicating whether the file exists or not.
 ```cpp
-
+vector<vector<int>> userfiletovec(string& mapname);
 ```
+The userfiletovec function is a useful utility for reading the contents of a file into a 2D vector . It handles file existence checks, user input validation, and dynamic memory allocation. By understanding the code structure and key concepts, you can effectively use this function in your own programs to process file data.
 
 ```cpp
 vector<vector<int>> filetovec(string mapname);
