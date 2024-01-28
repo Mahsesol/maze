@@ -1,0 +1,33 @@
+
+//function that turn existing map files in maps list into a maze(for solving or playing)
+vector<vector<int>> filetovec(string mapname) {
+    string checktxt = mapname.substr(mapname.size() - 4, 4);
+    if (checktxt != ".txt") {
+        mapname = mapname + ".txt";
+    }
+    ifstream file(mapname);
+    string row, col;
+    string steps;
+    file >> row >> col >> steps;
+    int row1 = stoi(row);
+    int col1 = stoi(col);
+    string** arr = new string * [row1];
+    for (int i = 0; i < row1; i++) {
+        arr[i] = new string[col1];
+    }
+    vector<vector<int>> vec;
+    for (int i = 0; i < stoi(row); i++) {
+        for (int j = 0; j < stoi(col); j++) {
+            file >> arr[i][j];
+        }
+    }
+    for (int i = 0; i < stoi(row); i++) {
+        vec.push_back(vector<int>());
+        for (int j = 0; j < stoi(col); j++) {
+            vec[i].push_back(stoi(arr[i][j]));
+        }
+    }
+    return vec;
+}
+
+
