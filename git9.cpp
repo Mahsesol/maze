@@ -1,3 +1,6 @@
+
+
+//the main game function
 int play(vector<vector<int>> maze, int min, int max, int& steps) {
     char play;
     int sum = 0;
@@ -15,7 +18,9 @@ int play(vector<vector<int>> maze, int min, int max, int& steps) {
 
     while (steps > 0 && !(x == maze.size() - 1 && y == maze[0].size() - 1) && (isvalidmoveplay(maze, x - 1, y, min)
         || isvalidmoveplay(maze, x + 1, y, min) || isvalidmoveplay(maze, x, y - 1, min) || isvalidmoveplay(maze, x, y + 1, min))) {
-        cin >> play;
+
+        char play = _getch();
+        //cin >> play;
         if (play == 'a' || play == 'A') {
             y--;
             if (isvalidmoveplay(maze, x, y, min)) {
@@ -102,24 +107,24 @@ int play(vector<vector<int>> maze, int min, int max, int& steps) {
                 cout << "sum:" << sum << endl;
             }
         }
-  
+
         else {
-            cout << "Do you want to fly? =) " << endl << "Me too!" << endl;
+            cout << "Do you want to fly? =) " << endl;
             cout << "Restart playing: " << endl;
             cout << "press w to go up" << endl;
             cout << "press s to go down" << endl;
             cout << "press a to go left" << endl;
             cout << "press d to go right" << endl;
         }
-  
+
     }
 
     if (steps == 0 && x == maze.size() - 1 && y == maze[0].size() - 1 && maze[x][y] == sum) {
-        cout << "you won :D" << endl;
+        cout << "\u001b[32;1m---* CONGRATULATIONS YOU WON *---\u001b[0m" << endl;
         return 1;
     }
     else {
-        cout << "you loose :("<< endl ;
+        cout << " \u001b[31m---* OH NO YOU LOST! *---\u001b[0m" << endl;
         return 0;
     }
 }
