@@ -1,3 +1,5 @@
+
+//function to update user information after playing a game and save it into file
 void updateuserinfo(userinfo user, int gameresult, int playingtime) {
     user.playcount++;
     user.playingtime += playingtime;
