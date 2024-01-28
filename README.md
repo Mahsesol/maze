@@ -21,11 +21,27 @@ maps name, result,... of ten last game and second one is using to see three top 
 Last choice, number "7" is using to exsiting from code.  
 If you are curious about details of the action behind each number and function, after checking codes, check "functions" part here.  
 Just remember these points before playing:
-- Copy "history.txt" and "topplayers.txt" files on your PC.  
+- Copy "history.txt" and "topplayers.txt" and "maps.txt" and "username.txt" files on your PC.  
+- For playing on your own maze playground, you should make a txt file before to chose. the first line of this file should be row and col with one space between them, next line should be steps as a number, then we will have the maze table as a matrix. it is going to be some thing like this:
+
+![photo9408583910](https://github.com/Mahsesol/maze/assets/154425249/d660cdd7-8e6c-41f5-8e70-66d1859a7730)
+
 - Avoid using the same names for maps and usernames. with doing that one of the files will be missed.
 - If code didnt work well, check Q&A part.
 
 Hope you enjoy!  
+
+## Repository files
+
+- main.cpp: all the code of project  
+- TXT folder: this folder include row txt files that we add "1" at the end of each name to preventing probably problems.  
+-   ...(MapsName).txt: there are some ready maze tables. this file is making by itself.  
+-   ...(UserNames).txt: user informations in txt files for each guy. this file is making by itself.  
+-   maps.txt: it keeps saved maps.  
+-   history.txt: it keeps the history of plays.  
+-   topplayers.txt: it keeps three top players.
+-   username.txt: it save each player name as a list and update it each time.
+
 
   
 ## Features
