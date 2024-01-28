@@ -1,3 +1,6 @@
+
+
+//struct to save user information
 struct userinfo {
     string name;
     int playcount;
@@ -6,6 +9,9 @@ struct userinfo {
     int playingtime;
     int winplayingtime;
 };
+
+
+//function to get user information from file and save into a vector
 userinfo getuserinfo(string name) {
     ifstream usernamesfile("username.txt");
     vector<string> usernames;
@@ -53,3 +59,6 @@ userinfo getuserinfo(string name) {
     }
     return user;
 }
+
+
+
