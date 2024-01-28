@@ -1,13 +1,11 @@
+
+//function to print user information
 void printuserinfo(userinfo user) {
-    string timeunit;
-    double time;
-    if (user.playingtime >= 60) {
-        time = user.playingtime / 60;
-        timeunit = "minutes";
-    }
-    else {
-        time = user.playingtime;
-        timeunit = "seconds";
-    }
-    cout << endl <<  "name: " << user.name << endl << "play count: " << user.playcount << endl << "win count: " << user.wincount << endl << "last win date: " << user.lastwin << endl << "time spent on playing: " << time << " " << timeunit << endl;
+    //  cout << "\u001b[36m******** YOUR INFORMATION ********" << endl;
+    struct time playtime;
+    playtime.minutes = user.playingtime / 60;
+    playtime.seconds = user.playingtime % 60;
+    cout << endl << "\u001b[36;1mName: " << "\u001b[0m " << user.name << endl << "\u001b[36;1mPlay count: " << "\u001b[0m " << user.playcount << endl << "\u001b[36;1mWin count: " << "\u001b[0m " << user.wincount << endl << "\u001b[36;1mLast win date: " << "\u001b[0m " << user.lastwin << endl << "\u001b[36;1mTime spent on playing: " << "\u001b[0m " << playtime.minutes << " minutes and " << playtime.seconds << " seconds" << endl;
 }
+
+
