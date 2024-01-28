@@ -1,15 +1,20 @@
+
+
+// maze maker hard version
 vector<vector<int>> hardmazemaker() {
     random_device rd;
     mt19937 g(rd());
 
     string mapname;
-    cout << "Enter your mapname: ";
-    cin >> mapname;
+    cout << endl << "Enter your mapname: ";
+    cin.ignore(1, '\n');
+    getline(cin, mapname);
+    mapname = space_to_underline(mapname);
     cout << endl;
 
     string checkrow, checkcol;
     int row, col;
-    cout << "Enter the size of your maze" << endl << "rows: ";
+    cout << "Enter the size of your maze: " << endl << "rows: ";
     try {
         cin >> checkrow;
         if (check_number(checkrow) == 0 || stoi(checkrow) <= 1) {
@@ -225,3 +230,4 @@ vector<vector<int>> hardmazemaker() {
     newmap(maze, row, col, step, mapname);
     return maze;
 }
+
