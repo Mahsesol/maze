@@ -871,14 +871,15 @@ inline bool exists_test(const std::string& name) {
 vector<vector<int>> userfiletovec(string& mapname) {
     vector<vector<int>> vec;
     string checktxt;
-    if(mapname.size() > 4){
+    if (mapname.size() > 4) {
         checktxt = mapname.substr(mapname.size() - 4, 4);
         if (checktxt != ".txt") {
             mapname = mapname + ".txt";
         }
-    }else{
-            mapname = mapname + ".txt";
-        }
+    }
+    else {
+        mapname = mapname + ".txt";
+    }
     int exists = exists_test(mapname);
     if (exists == 0) {
         cout << "file does not exist!";
@@ -890,15 +891,16 @@ vector<vector<int>> userfiletovec(string& mapname) {
                 return vec;
             }
             else {
-                if(mapname.size() > 4){
+                if (mapname.size() > 4) {
                     checktxt = mapname.substr(mapname.size() - 4, 4);
                     if (checktxt != ".txt") {
                         mapname = mapname + ".txt";
                     }
-                }else{
-                        mapname = mapname + ".txt";
-                    }
-                
+                }
+                else {
+                    mapname = mapname + ".txt";
+                }
+
                 exists = exists_test(mapname);
             }
         }
@@ -1335,7 +1337,7 @@ menu:
     cout << "*   |      |.|    |.|  .| | |                      | |  |`. |`    |`      |   *" << endl;
     cout << "*   |  _.-'  |  .'  |.' |/|_|        \u001b[31m7.Exit\u001b[0m        |_|  | |`|  `,.|     -_|   *" << endl;
     cout << "*   |  _.-'  |  .'  |.' |/|_|                      |_|  | |`|  `,.|     -_|   *" << endl;
-    cout << "*   |  _.-'  |  .'  |.' |/|_|  enter your choice:  |_| | |`|  `,. |     -_|   *" << endl;
+    cout << "*   |  _.-'  |  .'  |.' |/|_|  Enter your choice:  |_| | |`|  `,. |     -_|   *" << endl;
     cout << "*  _-'|     !.'|  .'| .'| [ ]______________________[ ] |   `. | `._  |   `|._ *" << endl;
     cout << "*-'    |   .'   |.|  |/|   |                        |  |    |.|      |-       *" << endl;
     cout << "*      |_.'|   .' | .' | |                            |   |  `.    |`._     | *" << endl;
@@ -1346,14 +1348,14 @@ menu:
     cin >> choice;
     if (choice != "1" && choice != "2" && choice != "3" && choice != "4" && choice != "5" && choice != "6" && choice != "7" && choice != "0") {
         while (choice != "1" && choice != "2" && choice != "3" && choice != "4" && choice != "5" && choice != "6" && choice != "7" && choice != "0") {
-            cout << endl << "invalid choice" << endl << "enter your choice: " << endl;
+            cout << endl << "Invalid choice" << endl << "Enter your choice: " << endl;
             cin >> choice;
         }
     }
     if (choice == "1") {
     newmaze:
         cout << endl << "\u001b[36;1m******** MAKING A NEW MAZE ********\u001b[0m" << endl;
-        cout << endl << "1.easy mode" << endl << "2.hard mode" << endl << "enter your choice: ";
+        cout << endl << "1.Easy mode" << endl << "2.Hard mode" << endl << "Enter your choice: ";
         cin >> choice;
 
         if (choice == "1") {
@@ -1369,7 +1371,7 @@ menu:
         }
         else {
             while (choice != "1" && choice != "2") {
-                cout << endl << "invalid choice" << endl << "enter 1 for making a easy maze and 2 for making a hard maze, also you can enter '0' to come back to menu :" << endl;
+                cout << endl << "Invalid choice" << endl << "Enter 1 for making a easy maze and 2 for making a hard maze, also you can enter '0' to come back to menu :" << endl;
                 cin >> choice;
                 if (choice == "0")
                 {
@@ -1396,11 +1398,11 @@ menu:
     else if (choice == "2") {
     playground:
         cout << endl << "\u001b[36;1m******** PLAYGROUND ********\u001b[0m" << endl;
-        cout << endl << "1.choose from existing map" << endl << "2.import a custom map" << endl << "enter your choice: ";
+        cout << endl << "1.Choose from existing map" << endl << "2.Import a custom map" << endl << "Enter your choice: ";
         cin >> choice;
         if (choice != "1" && choice != "2") {
             while (choice != "1" && choice != "2") {
-                cout << endl << "invalid choice" << endl << "enter 1 for playing with existing maps and 2 for importing a custom map, or press 0 for coming back to menu:" << endl;
+                cout << endl << "Invalid choice" << endl << "Enter 1 for playing with existing maps and 2 for importing a custom map, or press 0 for coming back to menu:" << endl;
                 cin >> choice;
                 if (choice == "0") {
                     goto menu;
@@ -1420,13 +1422,13 @@ menu:
             auto duration = duration_cast<seconds>(stop - start);
             int playingtime = duration.count();
             if (playingtime < 60) {
-                cout << endl << "your playing time: " << playingtime << " seconds" << endl;
+                cout << endl << "Your playing time: " << playingtime << " seconds" << endl;
             }
             else {
                 struct time playtime;
                 playtime.minutes = playingtime / 60;
                 playtime.seconds = playingtime % 60;
-                cout << endl << "your playing time: " << playtime.minutes << " minutes and " << playtime.seconds << "seconds" << endl;
+                cout << endl << "Your playing time: " << playtime.minutes << " minutes and " << playtime.seconds << "seconds" << endl;
             }
             userinfo thisuser = getuserinfo(username);
             updateuserinfo(thisuser, result, playingtime);
@@ -1449,6 +1451,9 @@ menu:
             cin >> mapname;
             cout << endl;
             vector<vector<int>> maze = userfiletovec(mapname);
+            if (maze.size() == 1) {
+                goto menu;
+            }
             int min = minelement(maze);
             int max = maxelement(maze);
             int steps = getstepsfromfile(mapname);
@@ -1458,13 +1463,13 @@ menu:
             auto duration = duration_cast<seconds>(stop - start);
             int playingtime = duration.count();
             if (playingtime < 60) {
-                cout << endl << "your playing time: " << playingtime << " seconds" << endl;
+                cout << endl << "Your playing time: " << playingtime << " seconds" << endl;
             }
             else {
                 struct time playtime;
                 playtime.minutes = playingtime / 60;
                 playtime.seconds = playingtime % 60;
-                cout << endl << "your playing time: " << playtime.minutes << " minutes and " << playtime.seconds << "seconds" << endl;
+                cout << endl << "Your playing time: " << playtime.minutes << " minutes and " << playtime.seconds << "seconds" << endl;
             }
             userinfo thisuser = getuserinfo(username);
             updateuserinfo(thisuser, result, playingtime);
@@ -1485,11 +1490,11 @@ menu:
     else if (choice == "3") {
     solve:
         cout << endl << "\u001b[36;1m******** MAZE SOLVING ********\u001b[0m" << endl;
-        cout << endl << "1.choose from existing map" << endl << "2.import a custom map" << endl << "0.back to menu" << endl << "enter your choice: ";
+        cout << endl << "1.Choose from existing map" << endl << "2.Import a custom map" << endl << "0.Back to menu" << endl << "Enter your choice: ";
         cin >> choice;
         if (choice != "1" && choice != "2") {
             while (choice != "1" && choice != "2") {
-                cout << endl << "invalid choice" << endl << "enter 1 for solving existing maps and 2 for importing a custom map or you can go to menu with pressing 0:";
+                cout << endl << "Invalid choice" << endl << "Enter 1 for solving existing maps and 2 for importing a custom map or you can go to menu with pressing 0:";
                 cin >> choice;
                 if (choice == "0")
                 {
@@ -1521,6 +1526,9 @@ menu:
             cin >> mapname;
             cout << endl;
             vector<vector<int>> maze = userfiletovec(mapname);
+            if (maze.size() == 1) {
+                goto menu;
+            }
             vector<vector<int>> maze1;
             int min = minelement(maze);
             int max = maxelement(maze);
@@ -1531,7 +1539,7 @@ menu:
                     maze1[i].push_back(maze[i][j]);
                 }
             }
-            bool sol = mazesolution(maze, 0, 0, maze.size()-1, maze[0].size()-1, steps, min, max, 0, maze1);
+            bool sol = mazesolution(maze, 0, 0, maze.size() - 1, maze[0].size() - 1, steps, min, max, 0, maze1);
             printmaze(maze1, min, max);
 
         }
@@ -1577,7 +1585,5 @@ menu:
 
     return 0;
 }
-
-
 
 
