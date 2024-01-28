@@ -1,3 +1,5 @@
+
+//function that updates history after any game and save into file
 void updatehistory(string playername, string mapname, int result, int playingtime, vector<history> historyvec) {
     history thisgame;
     thisgame.playername = playername;
@@ -18,3 +20,4 @@ void updatehistory(string playername, string mapname, int result, int playingtim
     }
 
 }
+
