@@ -20,8 +20,14 @@ With using number "4" you can see users informations such as name, play count, w
 maps name, result,... of ten last game and second one is using to see three top players in leader board.  
 Last choice, number "7" is using to exsiting from code.  
 If you are curious about details of the action behind each number and function, after checking codes, check "functions" part here.  
+Just remember these points before playing:
+- Copy "history.txt" and "topplayers.txt" files on your PC.  
+- Avoid using the same names for maps and usernames. with doing that one of the files will be missed.
+- If code didnt work well, check Q&A part.
 
+Hope you enjoy!  
 
+  
 ## Features
 
 - You are able to see the history of game.
@@ -232,7 +238,7 @@ after:
 ifstream usernamesfile("C:\Users\A\Desktop\c++\...");
 ```
 
-### Is there any diffrence between "IOS" and "Windows" or "Visual Stadio" and "VS Code" for running this code?
+### Is there any diffrence between "macOS" and "Windows" or "Visual Stadio" and "VS Code" for running this code?
 Actually nothing especially,but the best version of run is on windows. However we run this code on both. There are some little point that I mention if you find any problem try them.
 - 1: change the name of file with full address.
 - 2: comment second space_to_underline function and uncomment the other one which exist above that.
