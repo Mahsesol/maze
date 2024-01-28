@@ -1,3 +1,6 @@
+
+
+//struct to save history
 struct history {
     string playername;
     string mapname;
@@ -7,6 +10,8 @@ struct history {
 
 };
 
+
+//function to get the history frome file and save into a vector
 vector <history>  gethistory() {
     ifstream historyfile("history.txt");
     vector <history> historyvec;
@@ -26,3 +31,4 @@ vector <history>  gethistory() {
     historyfile.close();
     return historyvec;
 }
+
