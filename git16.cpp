@@ -1,51 +1,66 @@
 
-//function to get user information from file and save into a vector
-userinfo getuserinfo(string name) {
-    ifstream usernamesfile("username.txt");
-    vector<string> usernames;
-    string str;
-    int check = 0;
-    while (getline(usernamesfile, str)) {
-        if (!str.empty()) {
-            usernames.push_back(str);
-            if (str == name) {
-                check++;
-                break;
+
+//function that turn user file into a maze (for solving or playing)
+vector<vector<int>> userfiletovec(string& mapname) {
+    vector<vector<int>> vec;
+    string checktxt;
+    if (mapname.size() > 4) {
+        checktxt = mapname.substr(mapname.size() - 4, 4);
+        if (checktxt != ".txt") {
+            mapname = mapname + ".txt";
+        }
+    }
+    else {
+        mapname = mapname + ".txt";
+    }
+    int exists = exists_test(mapname);
+    if (exists == 0) {
+        cout << "file does not exist!";
+        while (exists == 0) {
+            cout << "enter the name of your file correctly or enter '>' to exit: ";
+            cin >> mapname;
+            if (mapname == ">") {
+                vec.push_back({ 0 });
+                return vec;
+            }
+            else {
+                if (mapname.size() > 4) {
+                    checktxt = mapname.substr(mapname.size() - 4, 4);
+                    if (checktxt != ".txt") {
+                        mapname = mapname + ".txt";
+                    }
+                }
+                else {
+                    mapname = mapname + ".txt";
+                }
+
+                exists = exists_test(mapname);
             }
         }
     }
-    userinfo user;
-    if (check == 1) {
-        name = name + ".txt";
-        ifstream userfile(name);
-        string playcount, wincount, playingtime, winplayingtime;
-        getline(userfile, user.name);
-        getline(userfile, playcount);
-        getline(userfile, wincount);
-        getline(userfile, user.lastwin);
-        getline(userfile, playingtime);
-        getline(userfile, winplayingtime);
-        user.playcount = stoi(playcount);
-        user.wincount = stoi(wincount);
-        user.playingtime = stoi(playingtime);
-        user.winplayingtime = stoi(winplayingtime);
-        userfile.close();
+    ifstream file(mapname);
+    string row, col;
+    string steps;
+    file >> row >> col >> steps;
+    int row1 = stoi(row);
+    int col1 = stoi(col);
+    string** arr = new string * [row1];
+    for (int i = 0; i < row1; i++) {
+        arr[i] = new string[col1];
     }
-    else {
-        user.name = name;
-        user.playcount = 0;
-        user.wincount = 0;
-        user.lastwin = "never";
-        user.playingtime = 0;
-        user.winplayingtime = 0;
-        ofstream usersfile("username.txt", ios::app);
-        usersfile << "\n" << user.name;
-        name = name + ".txt";
-        ofstream thisuserfile(name);
-        thisuserfile << user.name << "\n" << user.playcount << "\n" << user.wincount << "\n" << user.lastwin << "\n" << user.playingtime << "\n" << user.winplayingtime << "\n";
-
+    for (int i = 0; i < stoi(row); i++) {
+        for (int j = 0; j < stoi(col); j++) {
+            file >> arr[i][j];
+        }
     }
-    return user;
+    for (int i = 0; i < stoi(row); i++) {
+        vec.push_back(vector<int>());
+        for (int j = 0; j < stoi(col); j++) {
+            int temp = stoi(arr[i][j]);
+            vec[i].push_back(temp);
+        }
+    }
+    mapname.erase(mapname.size() - 4, 4);
+    return vec;
 }
-
 
