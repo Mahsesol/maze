@@ -1,9 +1,13 @@
+
+// maze maker easy version
 vector<vector<int>> easymazemaker() {
     random_device rd;
     mt19937 g(rd());
     string mapname;
     cout << "Enter your map name: ";
-    cin >> mapname;
+    cin.ignore(1, '\n');
+    getline(cin, mapname);
+    mapname = space_to_underline(mapname);
     cout << endl;
     string checkrow, checkcol;
     int row, col;
@@ -38,7 +42,7 @@ vector<vector<int>> easymazemaker() {
     col = stoi(checkcol);
     int sum = 0;
 
-   
+    //sakht va por e maze
     vector<vector<int>> maze(row, vector<int>(col));
     for (int i = 0; i < row; i++) {
         for (int j = 0; j < col; j++) {
@@ -49,7 +53,7 @@ vector<vector<int>> easymazemaker() {
     vector<int> tartib;
     uniform_int_distribution<int> distribution(-3, 3);
     uniform_int_distribution<int> distribution2(2, 5);
-    
+    //vector tartib ke tartib ghadam haye ma ra moshkhas mikond ra por mikonim
 
     for (int i = 0; i < col - 1; i++) { tartib.push_back(1); }
     for (int i = 0; i < row - 1; i++) { tartib.push_back(0); }
@@ -58,7 +62,7 @@ vector<vector<int>> easymazemaker() {
     int val = 0;
 
     shuffle(tartib.begin(), tartib.end(), g);
-   
+    //bade taghir tartib ghadam ha masir ro por mikonim
 
     for (int i = 0; i < tartib.size(); i++) {
         val = distribution(g);
@@ -98,8 +102,11 @@ vector<vector<int>> easymazemaker() {
         }
     }
 
-    
+
     newmap(maze, row, col, row + col - 2, mapname);
 
     return maze;
 }
+
+
+
