@@ -275,5 +275,5 @@ https://t.me/mahsa_solimani
 If you have any feedback, please reach out to us. <3 
 ## 
 - [Liliarouhi](https://www.github.com/Liliarouhi)
-- [Mahsesol](https://www.github.com/Mahsesol))
+- [Mahsesol](https://www.github.com/Mahsesol)
 
